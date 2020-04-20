@@ -109,7 +109,8 @@ header a:hover {
   height: 65px;
   margin: auto;
   position: absolute;
-  right: 801.5px;
+  right: 401.75px;
+  left: 401.75px;
   top: 100px;
 }
 #citation-div h4 {
