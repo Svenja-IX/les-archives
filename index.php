@@ -18,36 +18,51 @@ require_once ('includes/bdd.php');
 ?>
     <main>
         <article class="article-categorie">
+
+    <a href="#" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/Jedi_Temple_Guard_vision.png" alt="image">
         <div class="categories-body">
             <h5 class="categories-title">Personnages</h5>
         </div>
     </div>
+    </a>
+
+    <a href="#" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/mandalorian.jpg" alt="image">
         <div class="categories-body">
             <h5 class="categories-title">organisations</h5>
         </div>
     </div>
+    </a>
+
+    <a href="#" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/armes.jpg" alt="image">
         <div class="categories-body">
             <h5 class="categories-title">Armes</h5>
         </div>
     </div>
+    </a>
+
+    <a href="#" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/mustafar.png" alt="image">
         <div class="categories-body">
             <h5 class="categories-title">Planetes</h5>
         </div>
     </div>
+    </a>
+
+    <a href="#" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/vaisseaux.png" alt="image">
         <div class="categories-body">
             <h5 class="categories-title">vaisseaux</h5>
         </div>
     </div>
+    </a>
 </article>
 </main>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

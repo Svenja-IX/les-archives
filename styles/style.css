@@ -142,6 +142,12 @@ header a:hover {
   display: flex;
   margin: auto;
   transition: 0.5s;
+} 
+#lien-categories {
+  text-decoration: none;
+  width: 400px;
+  height: 400px;
+  margin: auto;
 }
 .categories-img {
   position: absolute;
@@ -255,7 +261,7 @@ header a:hover {
  #menu {
    position: absolute;
    width: 300px;
-   height: 9999px;
+   height: 1800px;
    margin: -100px 0 0 -50px;
    padding: 50px;
    padding-top: 125px;
