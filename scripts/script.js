@@ -17,6 +17,7 @@ $(".categories").eq(0).mouseleave(function(){
                 "opacity": "100%"
         })
 }); 
+
 $(".categories").eq(1).mouseenter(function(){
         $('.categories-img').eq(1).css({
                 "filter": "blur(3px)",
@@ -31,6 +32,7 @@ $(".categories").eq(1).mouseleave(function(){
                 "opacity": "100%"
         })
 }); 
+
 $(".categories").eq(2).mouseenter(function(){
         $('.categories-img').eq(2).css({
                 "filter": "blur(3px)",
@@ -45,6 +47,7 @@ $(".categories").eq(2).mouseleave(function(){
                 "opacity": "100%"
         })
 });
+
 $(".categories").eq(3).mouseenter(function(){
         $('.categories-img').eq(3).css({
                 "filter": "blur(3px)",
@@ -59,6 +62,7 @@ $(".categories").eq(3).mouseleave(function(){
                 "opacity": "100%"
         })
 }); 
+
 $(".categories").eq(4).mouseenter(function(){
         $('.categories-img').eq(4).css({
                 "filter": "blur(3px)",
