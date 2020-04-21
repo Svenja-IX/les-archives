@@ -16,10 +16,10 @@ require_once ('includes/bdd.php');
     // include ('includes/form-inscription.php');
     // include ('includes/form-connexion.php');
 ?>
-    <main>
-        <article class="article-categorie">
+    <main id="main-index">
+        <article id="article-categorie">
 
-    <a href="#" id="lien-categories">
+    <a href="personnages.php" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/Jedi_Temple_Guard_vision.png" alt="image">
         <div class="categories-body">

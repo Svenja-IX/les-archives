@@ -10,7 +10,7 @@
     <span></span>
     <span></span>
     <ul id="menu">
-      <a href="article.php"><li>personnages</li></a>
+      <a href="personnages.php"><li>personnages</li></a>
       <a href="#"><li>organisations</li></a>
       <a href="#"><li>armes</li></a>
       <a href="#"><li>planetes</li></a>

@@ -8,11 +8,10 @@ require_once("config.php");
 try {
     $pdo = new PDO("mysql:host=".$host.";dbname=".$dbname, $dbuser, $dbpass);
     $pdo->exec('SET NAMES utf8');
-    $categories = $pdo->query("SELECT * FROM les_archives");
-    $citations = $pdo->query("SELECT citation_description FROM citation ORDER BY RAND () LIMIT 1");
+    $personnages = $pdo->query("SELECT * FROM personnages");
+    $citations = $pdo->query("SELECT citation_description, citation_perso FROM citation ORDER BY RAND () LIMIT 1");
+    $personnages->setFetchMode(PDO::FETCH_ASSOC);
 
-    // $NAME = $pdo->query("");
-    // $NAME->setFetchMode(PDO::FETCH_ASSOC);
 }  catch (Exception $exception) {
 
     $messageError = $exception->getMessage();
