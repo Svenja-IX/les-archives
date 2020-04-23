@@ -7,11 +7,11 @@
         <form action="addPerso.php" method="post" enctype="multipart/form-data">
             <div class="form-div">
                 <label for="perso_prenom">Prénom*</label>
-                <input type="text" name="perso_prenom" id="perso_prenom" placeholder="Nom du personnage" required>
+                <input type="text" name="perso_prenom" id="perso_prenom" placeholder="Prénom du personnage" required>
             </div>
             <div class="form-div">
                 <label for="perso_prenom">Nom</label>
-                <input type="text" name="perso_nom" id="perso_nom" placeholder="Prénom du personnage">
+                <input type="text" name="perso_nom" id="perso_nom" placeholder="Nom du personnage">
             </div>
             <div class="form-div">
                 <label>Image*</label>

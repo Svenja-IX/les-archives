@@ -304,8 +304,18 @@ header a:hover {
   margin-left: 0;
   margin-top: 5px;
   display: grid;
-  font-size: 25px;
+  font-size: 18px;
   cursor: text;
+  border-radius: 5px;
+  border: rgb(30,30,30) 1px solid;
+  transition: 0.25s;
+}
+.form-div input:hover {
+  background:rgb(113, 171, 236);
+  transition: 0.25s;
+}
+input:required:focus {
+  border: solid red 1px;
 }
 #perso_img {
   margin: 0;
