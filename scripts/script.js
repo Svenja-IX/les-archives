@@ -3,77 +3,78 @@ $('body').css({
         "transition": "1s"
         });  
 
-$(".categories").eq(0).mouseenter(function(){
-        $('.categories-img').eq(0).css({
-                "filter": "blur(3px)",
-                "transition": "0.25s",
-                "opacity": "80%"
-        })
-});   
-$(".categories").eq(0).mouseleave(function(){
-        $('.categories-img').eq(0).css({
-                "filter": "none",
-                "transition": "0.25s",
-                "opacity": "100%"
-        })
-}); 
+/******************************/
+// début boucle effet blur + text grs PERSONNAGE
+$('.theBlockPersonnages').each(function(){
+        $(this).on({
+                mouseenter: function(){
+                        $(this).find('h5').css({
+                                "font-size": "30px",
+                                "transition": "0.25s"
+                        });
+                        $(this).find('img').css({
+                                "filter": "blur(3px)",
+                                "transition": "0.25s"
+                        });
+                }, 
+                mouseleave: function(){
+                        $(this).find('h5').css({
+                                "font-size": "25px",
+                                "transition": "0.25s"
+                        });
+                        $(this).find('img').css({
+                                "filter": "none",
+                                "transition": "0.25s"
+                        });
+                }
 
-$(".categories").eq(1).mouseenter(function(){
-        $('.categories-img').eq(1).css({
-                "filter": "blur(3px)",
-                "transition": "0.25s",
-                "opacity": "80%"
-        })
-});   
-$(".categories").eq(1).mouseleave(function(){
-        $('.categories-img').eq(1).css({
-                "filter": "none",
-                "transition": "0.25s",
-                "opacity": "100%"
-        })
-}); 
+        });
+});
+// fin boucle effet blur + text grs PERSONNAGE
+/******************************/
 
-$(".categories").eq(2).mouseenter(function(){
-        $('.categories-img').eq(2).css({
-                "filter": "blur(3px)",
-                "transition": "0.25s",
-                "opacity": "80%"
-        })
-});   
-$(".categories").eq(2).mouseleave(function(){
-        $('.categories-img').eq(2).css({
-                "filter": "none",
-                "transition": "0.25s",
-                "opacity": "100%"
+/******************************/
+// début boucle effet blur + text grs PERSONNAGE
+$('.categories').each(function(){
+        $(this).on({
+                mouseenter: function(){
+                        $(this).find('h5').css({
+                                "font-size": "40px",
+                                "transition": "0.25s"
+                        });
+                        $(this).find('img').css({
+                                "filter": "blur(3px)",
+                                "transition": "0.25s"
+                        });
+                }, 
+                mouseleave: function(){
+                        $(this).find('h5').css({
+                                "font-size": "30px",
+                                "transition": "0.25s"
+                        });
+                        $(this).find('img').css({
+                                "filter": "none",
+                                "transition": "0.25s"
+                        });
+                }
+
+        });
+});
+// fin boucle effet blur + text grs PERSONNAGE
+/******************************/
+
+// fonction ouverute/fermeture modal
+$("img").click(function(){
+        $('#modal').css({
+                "transition": "0.5s",
+                "display": "unset"
+                
         })
 });
 
-$(".categories").eq(3).mouseenter(function(){
-        $('.categories-img').eq(3).css({
-                "filter": "blur(3px)",
-                "transition": "0.25s",
-                "opacity": "80%"
-        })
-});   
-$(".categories").eq(3).mouseleave(function(){
-        $('.categories-img').eq(3).css({
-                "filter": "none",
-                "transition": "0.25s",
-                "opacity": "100%"
-        })
-}); 
-
-$(".categories").eq(4).mouseenter(function(){
-        $('.categories-img').eq(4).css({
-                "filter": "blur(3px)",
-                "transition": "0.25s",
-                "opacity": "80%"
-        })
-});   
-$(".categories").eq(4).mouseleave(function(){
-        $('.categories-img').eq(4).css({
-                "filter": "none",
-                "transition": "0.25s",
-                "opacity": "100%"
+$("#fermer").click(function(){
+        $('#modal').css({
+                "transition": "0.5s",
+                "display": "none"
         })
 });

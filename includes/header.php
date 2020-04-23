@@ -26,3 +26,4 @@
   ?>
 </div>
 </header>
+<?php include ('includes/formAddPerso.php'); ?>

@@ -15,23 +15,23 @@
 ?>
 <?php
 echo '<main id="main-personnage">';
-echo '<article id="article-personnage">';
+echo '<article class="article-personnage">';
 
     foreach($personnages as $personnage){
     
     // j'afficher chaque ligne dans une card
     echo '<a href="'.$personnage['perso_prenom']."-".$personnage['perso_nom'].".php".'" id="lien-categories">
-            <div class="categories">
-                    <img class="categories-img" src="'.$personnage['perso_img'].'" alt="image">
-                <div class="categories-body">
-                    <h5 class="categories-title">'.$personnage['perso_prenom']."<br>".$personnage['perso_nom'].'</h5>
-                </div>
+            <div class="theBlockPersonnages">
+                <img class="categories-img" src="'.$personnage['perso_img'].'" alt="image">
+                <h5 class="categories-title">'.$personnage['perso_prenom']."<br>".$personnage['perso_nom'].'</h5>
             </div>
         </a>';
     }
+    include ('includes/plus.php');
     echo '</article>';
     echo '</main>';
 ?>
+
 
 <!-- <a href="#" id="lien-categories">
     <div class="categories">
