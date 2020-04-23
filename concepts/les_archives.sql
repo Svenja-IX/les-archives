@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 21 avr. 2020 à 10:02
+-- Généré le : jeu. 23 avr. 2020 à 12:01
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -112,6 +112,15 @@ CREATE TABLE `categories` (
   `categorie_nom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Déchargement des données de la table `categories`
+--
+
+INSERT INTO `categories` (`categorie_id`, `categorie_nom`) VALUES
+(1, 'ordre Jedi'),
+(2, 'sith'),
+(3, 'chasseur de primes');
+
 -- --------------------------------------------------------
 
 --
@@ -130,7 +139,7 @@ CREATE TABLE `citation` (
 
 INSERT INTO `citation` (`citation_id`, `citation_perso`, `citation_description`) VALUES
 (1, 'Vador', '\"Je suis ton père\"'),
-(2, 'Obi-Wan Kenobi', '\"Que la force soit avec toi\"'),
+(2, '', '\"Que la force soit avec toi\"'),
 (3, 'Yoda', '\"La peur mène à la colère, la colère mène à la haine, la haine mène à la souffrance.\"');
 
 -- --------------------------------------------------------
@@ -159,6 +168,17 @@ CREATE TABLE `personnages` (
   `perso_img` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `perso_categorie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `personnages`
+--
+
+INSERT INTO `personnages` (`perso_id`, `perso_prenom`, `perso_nom`, `perso_img`, `perso_categorie`) VALUES
+(1, 'anakin', 'skywalker', 'images/anakin-skywalker.jpg', 1),
+(2, 'obi-Wan', 'kenobi', 'images/obi-wan-kenobi.jpg', 1),
+(3, 'maul', NULL, 'images/maul.jpg', 2),
+(4, 'Sheev', 'Palpatine', 'images/sheev-palpatine.jpg', 2),
+(5, 'jango', 'fett', 'images/jango-fett.png', 3);
 
 -- --------------------------------------------------------
 
@@ -354,7 +374,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `categorie_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `citation`
@@ -372,7 +392,7 @@ ALTER TABLE `organisations`
 -- AUTO_INCREMENT pour la table `personnages`
 --
 ALTER TABLE `personnages`
-  MODIFY `perso_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `perso_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `planetes`
