@@ -76,5 +76,4 @@ $(".categories").eq(4).mouseleave(function(){
                 "transition": "0.25s",
                 "opacity": "100%"
         })
-}); 
- 
+});

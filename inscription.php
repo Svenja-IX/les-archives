@@ -20,7 +20,7 @@ if (!empty($_POST['user_prenom']) && !empty($_POST['info_password']) && !empty($
 		// je premare ma requête
 		$stmt = $sqlInsc->prepare("INSERT INTO `info` (`info_id`, `info_prenom`, `info_nom`, `info_mail`, `info_password`) VALUES (NULL, :info_prenom, :info_nom, :info_email, :info_password);");
 		
-	// je lui donne les paramètres dont elle a besoin sans en oublier
+		// je lui donne les paramètres dont elle a besoin sans en oublier
 		$stmt->bindValue(":user_prenom", $_POST['user_prenom']);
 		$stmt->bindValue(":user_nom", $_POST['user_nom']);
 		$stmt->bindValue(":user_email", $_POST['user_email']);

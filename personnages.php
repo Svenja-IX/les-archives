@@ -16,6 +16,7 @@
 <?php
 echo '<main id="main-personnage">';
 echo '<article id="article-personnage">';
+
     foreach($personnages as $personnage){
     
     // j'afficher chaque ligne dans une card
