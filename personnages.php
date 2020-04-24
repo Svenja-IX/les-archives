@@ -12,6 +12,7 @@
 <?php
     require_once('includes/bdd.php');
     include ('includes/header.php');
+    include ('includes/formAddPerso.php'); 
 ?>
 <?php
 echo '<main id="main-personnage">';

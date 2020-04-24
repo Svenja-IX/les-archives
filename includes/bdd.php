@@ -10,6 +10,7 @@ try {
     $pdo->exec('SET NAMES utf8');
     $personnages = $pdo->query("SELECT * FROM personnages");
     $citations = $pdo->query("SELECT citation_description, citation_perso FROM citation ORDER BY RAND () LIMIT 1");
+    $addPersonnages = $pdo->query("SELECT citation_description, citation_perso FROM citation ORDER BY RAND () LIMIT 1");
     $personnages->setFetchMode(PDO::FETCH_ASSOC);
 
 }  catch (Exception $exception) {
