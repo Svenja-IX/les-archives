@@ -210,7 +210,7 @@ header a:hover {
   font-size: 25px;
   justify-content: center;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   width: 250px;
   height: 250px;
   text-align: center; 

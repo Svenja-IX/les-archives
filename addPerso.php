@@ -5,7 +5,7 @@ if (!empty($_POST['perso_prenom']) && !empty($_POST['perso_nom']) && isset($_POS
 	try {
 		# première étape : je me connecte au serveur
 		$addPerso = new PDO("mysql:host=localhost;dbname=les_archives", "root");
-
+		$addPerso->exec('SET NAMES utf8');
 		// je premare ma requête
 		$stmt = $addPerso->prepare("INSERT INTO `personnages` (`perso_prenom`, `perso_nom`, `perso_categorie`) VALUES (:perso_prenom, :perso_nom, :perso_categorie)");
 
