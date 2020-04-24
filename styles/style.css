@@ -219,10 +219,10 @@ header a:hover {
   position: absolute;
   margin: 0;
 }
-/* .article-personnage h5:hover {
-  font-size: 30px;
-  transition: 0.25s;
-} */
+.add {
+  width: 100%;
+  height: 100%;
+}
 .article-personnage .categories-img {
   position: absolute;
   width: 250px;
