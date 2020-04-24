@@ -28,7 +28,7 @@ require_once ('includes/bdd.php');
     </div>
     </a>
 
-    <a href="#" id="lien-categories">
+    <a href="organisations.php" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/mandalorian.jpg" alt="image">
         <div class="categories-body">
@@ -37,7 +37,7 @@ require_once ('includes/bdd.php');
     </div>
     </a>
 
-    <a href="#" id="lien-categories">
+    <a href="armes.php" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/armes.jpg" alt="image">
         <div class="categories-body">
@@ -46,7 +46,7 @@ require_once ('includes/bdd.php');
     </div>
     </a>
 
-    <a href="#" id="lien-categories">
+    <a href="planetes.php" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/mustafar.png" alt="image">
         <div class="categories-body">
@@ -55,7 +55,7 @@ require_once ('includes/bdd.php');
     </div>
     </a>
 
-    <a href="#" id="lien-categories">
+    <a href="vaisseaux.php" id="lien-categories">
     <div class="categories">
         <img class="categories-img" src="images/vaisseaux.png" alt="image">
         <div class="categories-body">

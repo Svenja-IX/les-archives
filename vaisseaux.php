@@ -16,7 +16,7 @@
 ?>
 <?php
 echo '<main id="main-personnage">';
-echo '<article class="article">';
+echo '<article class="article-personnage">';
 
     foreach($personnages as $personnage){
     

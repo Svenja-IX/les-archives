@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personnages - Les archives</title>
+    <title>Organisations - Les archives</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="images/holocron-icon.png">
 </head>
@@ -12,19 +12,19 @@
 <?php
     require_once('includes/bdd.php');
     include ('includes/header.php');
-    include ('includes/formAddPerso.php'); 
+    include ('includes/formAddOrga.php'); 
 ?>
 <?php
 echo '<main id="main-personnage">';
 echo '<article class="article">';
 
-    foreach($personnages as $personnage){
+    foreach($organisations as $organisation){
     
     // j'afficher chaque ligne dans une card
-    echo '<a href="'.$personnage['perso_prenom']."-".$personnage['perso_nom'].".php".'" id="lien-categories">
-            <div class="theBlockPersonnages">
-                <img class="categories-img" src="'.$personnage['perso_img'].'" alt="image">
-                <h5 class="categories-title">'.$personnage['perso_prenom']."<br>".$personnage['perso_nom'].'</h5>
+    echo '<a href="'.$organisation['organisation_nom'].".php".'" id="lien-categories">
+            <div class="theBlock">
+                <img class="categories-img" src="'.$organisation['organisation_img'].'" alt="image">
+                <h5 class="categories-title">'.$organisation['organisation_nom'].'</h5>
             </div>
         </a>';
     }
