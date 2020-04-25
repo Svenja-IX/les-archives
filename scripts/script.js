@@ -54,7 +54,7 @@ $('.categories').each(function(){
                 }, 
                 mouseleave: function(){
                         $(this).find('h5').css({
-                                "font-size": "40px",
+                                "font-size": "35px",
                                 "transition": "0.25s"
                         });
                         $(this).find('img').css({

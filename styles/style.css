@@ -187,12 +187,17 @@ header a:hover {
   color: white;
   text-shadow: rgb(30,30,30) 0px 4px 3px;
   z-index: 10;
-  font-size: 40px;
   justify-content: center;
   display: flex;
   align-items: center;
   width: 100%;
   transition: 0.25s;
+}
+#article-categorie .categories-body h5 {
+  color: white;
+  text-shadow: rgb(30,30,30) 0px 4px 3px;
+  z-index: 10;
+  font-size: 35px;
 }
 #article-categorie .categories-body:hover {
   font-size: 50px;

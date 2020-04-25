@@ -32,4 +32,21 @@ try {
 
 }
 
-?>
+
+
+
+
+// require_once("config.php");
+
+// try {
+//     $pdo = new PDO("mysql:host=".$host.";dbname=".$dbname, $dbuser, $dbpass);
+//     $GLOBALS['pdo'] = $pdo;
+//     $pdo->exec('SET NAMES utf8');
+
+// }  catch (Exception $exception) {
+
+//     $messageError = $exception->getMessage();
+
+// }
+
+// ?>
