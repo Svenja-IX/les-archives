@@ -13,7 +13,6 @@ require_once ('includes/bdd.php');
 <body>
 <?php
     include ('includes/header.php');
-    // include ('includes/form-inscription.php');
     // include ('includes/form-connexion.php');
 ?>
     <main id="main-index">

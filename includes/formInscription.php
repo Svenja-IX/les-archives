@@ -8,23 +8,23 @@
         <form action="inscription.php" method="POST">
         <div class="form-div">
                 <label for="utilisateur_prenom">Prénom</label>
-                <input type="text" name="utilisateur_prenom" id="utilisateur_prenom" placeholder="Votre prénom">
+                <input type="text" name="utilisateur_prenom" id="utilisateur_prenom" placeholder="Votre prénom" required>
             </div>
             <div class="form-div">
                 <label for="utilisateur_nom">Nom</label>
-                <input type="text" name="utilisateur_nom" id="utilisateur_nom" placeholder="Votre nom">
+                <input type="text" name="utilisateur_nom" id="utilisateur_nom" placeholder="Votre nom" required>
             </div>
             <div class="form-div">
                 <label for="utilisateur_mail">Mail</label>
-                <input type="mail" name="utilisateur_mail" id="utilisateur_mail" placeholder="Votre mail">
+                <input type="mail" name="utilisateur_mail" id="utilisateur_mail" placeholder="Votre mail" required>
             </div>
             <div class="form-div">
                 <label for="utilisateur_mdp">Mot de passe</label>
-                <input type="password" name="utilisateur_mdp" id="utilisateur_mdp" placeholder="Entrez un mot de passe">
+                <input type="password" name="utilisateur_mdp" id="utilisateur_mdp" placeholder="Entrez un mot de passe" required>
             </div>
             <div class="form-div">
                 <label for="utilisateur_confirmMdp">Confirmer le mot de passe</label>
-                <input type="password" name="utilisateur_confirmMdp" id="utilisateur_confirmMdp" placeholder="Entrez le même mot de passe">
+                <input type="password" name="utilisateur_confirmMdp" id="utilisateur_confirmMdp" placeholder="Entrez le même mot de passe" required>
             </div>
             <div class='btn'>
                 <div class="form-btn">
