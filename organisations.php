@@ -22,13 +22,13 @@ echo '<article class="article">';
     
     // j'afficher chaque ligne dans une card
     echo '<a href="'.$organisation['organisation_nom'].".php".'" id="lien-categories">
-            <div class="theBlock">
+            <div class="theBlockInto">
                 <img class="categories-img" src="'.$organisation['organisation_img'].'" alt="image">
                 <h5 class="categories-title">'.$organisation['organisation_nom'].'</h5>
             </div>
         </a>';
     }
-    include ('includes/plus.php');
+    echo '<div id="bloc-plus"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';
     echo '</article>';
     echo '</main>';
 ?>

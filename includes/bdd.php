@@ -14,6 +14,15 @@ try {
 
     $organisations = $pdo->query("SELECT * FROM organisations");
     $organisations->setFetchMode(PDO::FETCH_ASSOC);
+    
+    $armes = $pdo->query("SELECT * FROM armes");
+    $armes->setFetchMode(PDO::FETCH_ASSOC);
+
+    $planetes = $pdo->query("SELECT * FROM planetes");
+    $planetes->setFetchMode(PDO::FETCH_ASSOC);
+
+    $vaisseaux = $pdo->query("SELECT * FROM vaisseaux");
+    $vaisseaux->setFetchMode(PDO::FETCH_ASSOC);
 
     $citations = $pdo->query("SELECT citation_description, citation_perso FROM citation ORDER BY RAND () LIMIT 1");
 

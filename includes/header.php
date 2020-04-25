@@ -15,10 +15,10 @@ include ('includes/formConnexion.php');
     <span></span>
     <ul id="menu">
       <a href="personnages.php"><li>personnages</li></a>
-      <a href="#"><li>organisations</li></a>
-      <a href="#"><li>armes</li></a>
-      <a href="#"><li>planetes</li></a>
-      <a href="#"><li>vaisseaux</li></a>
+      <a href="organisations.php"><li>organisations</li></a>
+      <a href="armes.php"><li>armes</li></a>
+      <a href="planetes.php"><li>planetes</li></a>
+      <a href="vaisseaux.php"><li>vaisseaux</li></a>
     </ul>
   </div>
 </nav>

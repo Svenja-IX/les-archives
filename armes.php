@@ -12,23 +12,23 @@
 <?php
     require_once('includes/bdd.php');
     include ('includes/header.php');
-    include ('includes/formAddPerso.php'); 
+    include ('includes/formAddArme.php'); 
 ?>
 <?php
 echo '<main id="main-personnage">';
-echo '<article class="article-personnage">';
+echo '<article class="article">';
 
-    foreach($personnages as $personnage){
+    foreach($armes as $arme){
     
     // j'afficher chaque ligne dans une card
-    echo '<a href="'.$personnage['perso_prenom']."-".$personnage['perso_nom'].".php".'" id="lien-categories">
-            <div class="theBlockPersonnages">
-                <img class="categories-img" src="'.$personnage['perso_img'].'" alt="image">
-                <h5 class="categories-title">'.$personnage['perso_prenom']."<br>".$personnage['perso_nom'].'</h5>
+    echo '<a href="'.$arme['arme_nom'].".php".'" id="lien-categories">
+            <div class="theBlockInto">
+                <img class="categories-img" src="'.$arme['arme_img'].'" alt="image">
+                <h5 class="categories-title">'.$arme['arme_nom'].'</h5>
             </div>
         </a>';
     }
-    include ('includes/plus.php');
+    echo '<div id="bloc-plus"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';
     echo '</article>';
     echo '</main>';
 ?>

@@ -10,7 +10,7 @@ $('body').css({
 
 /******************************/
 // début boucle effet blur + text grs PERSONNAGE
-$('.theBlockPersonnages').each(function(){
+$('.theBlockInto').each(function(){
         $(this).on({
                 mouseenter: function(){
                         $(this).find('h5').css({
@@ -36,6 +36,36 @@ $('.theBlockPersonnages').each(function(){
         });
 });
 // fin boucle effet blur + text grs PERSONNAGE
+/******************************/
+
+/******************************/
+// début boucle effet blur + text grs INDEX
+$('.categories').each(function(){
+        $(this).on({
+                mouseenter: function(){
+                        $(this).find('h5').css({
+                                "font-size": "45px",
+                                "transition": "0.25s"
+                        });
+                        $(this).find('img').css({
+                                "filter": "blur(3px)",
+                                "transition": "0.25s"
+                        });
+                }, 
+                mouseleave: function(){
+                        $(this).find('h5').css({
+                                "font-size": "40px",
+                                "transition": "0.25s"
+                        });
+                        $(this).find('img').css({
+                                "filter": "none",
+                                "transition": "0.25s"
+                        });
+                }
+
+        });
+});
+// fin boucle effet blur + text grs INDEX
 /******************************/
 
 

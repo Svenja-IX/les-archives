@@ -60,7 +60,6 @@ if (!empty($_POST['utilisateur_mail']) && !empty($_POST['utilisateur_mdp'])) {
 				} else {
 					header("Location: index.php?errorLogin=mauvaisMdp");
 					exit;
-					//echo "Le mdp est faux";
 				}			
 			}
 		}catch(PDOException $exception){
@@ -69,10 +68,8 @@ if (!empty($_POST['utilisateur_mail']) && !empty($_POST['utilisateur_mdp'])) {
 	} else {
 		header("Location: index.php?errorLogin=mailInvalide");
 		exit;
-		//echo "entrez un email valide : ".$_POST['utilisateur_mail']." est pourri !";
 	}
 } else {
 	header("Location: index.php?errorLogin=vide");
 	exit;
-	//echo "erreur<br>tu recomence trouduc";
 }
