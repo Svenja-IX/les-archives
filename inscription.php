@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les archives</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="images/holocron-icon.png">
-</head>
-<body>
-<main>
 <?php 
 include ('includes/header.php');
 
-if (!empty($_POST['user_prenom']) && !empty($_POST['info_password']) && !empty($_POST['user_email']) && !empty($_POST['user_password'])) {
+if (!empty($_POST['utilisateur_prenom']) && !empty($_POST['utilisateur_nom']) && !empty($_POST['utilisateur_mail']) && !empty($_POST['utilisateur_mdp']) && !empty($_POST['utilisateur_confirmMdp'])) {
 	try{
 		# première étape : je me connecte au serveur
-		$sqlInsc = new PDO("mysql:host=localhost;dbname=entrainementphpbdd", "root");
+		$sql = new PDO("mysql:host=localhost;dbname=les_archives", "root");
 
 		// je premare ma requête
-		$stmt = $sqlInsc->prepare("INSERT INTO `info` (`info_id`, `info_prenom`, `info_nom`, `info_mail`, `info_password`) VALUES (NULL, :info_prenom, :info_nom, :info_email, :info_password);");
+		$stmt = $sql->prepare("INSERT INTO `utilisateurs` (`utilisateur_prenom`, `utilisateur_nom`, `utilisateur_mail`, `utilisateur_mdp`) VALUES (:utilisateur_prenom, :utilisateur_nom, :utilisateur_mail, :utilisateur_mdp);");
 		
 		// je lui donne les paramètres dont elle a besoin sans en oublier
-		$stmt->bindValue(":user_prenom", $_POST['user_prenom']);
-		$stmt->bindValue(":user_nom", $_POST['user_nom']);
-		$stmt->bindValue(":user_email", $_POST['user_email']);
-		$stmt->bindValue(":user_password", password_hash($_POST['user_password'], PASSWORD_DEFAULT));
+		$stmt->bindValue(":utilisateur_prenom", $_POST['utilisateur_prenom']);
+		$stmt->bindValue(":utilisateur_nom", $_POST['utilisateur_nom']);
+		$stmt->bindValue(":utilisateur_mail", $_POST['utilisateur_mail']);
+		$stmt->bindValue(":utilisateur_mdp", password_hash($_POST['utilisateur_mdp'], PASSWORD_DEFAULT));
 
 		// Je l'execute et en fonction de si l'email existe deja ou pas, j'insere ma requete dans la bdd
 		$stmt->execute();

@@ -2,6 +2,10 @@
   require_once ('includes/bdd.php');
 ?>
 <header>
+<?php 
+include ('includes/formInscription.php'); 
+include ('includes/formConnexion.php'); 
+?>
         <h1 id='header-title'><a href="index.php">Les archives</a></h1>
 <nav role="navigation">
   <div id="menuToggle">

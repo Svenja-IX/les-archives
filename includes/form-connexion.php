@@ -1,26 +1,35 @@
-<!-- Modal connexion -->
-<div class="modal fade" id="connect" tabindex="-1" role="dialog" aria-labelledby="connectTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="connectTitle">Connexion</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+<div id="modal">
+    <div id="form-bloc">
+        <div id="form-body">
+            <div class="">
+                <h4>Ajouter un personnage</h4>
             </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Adresse Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Exemple@gmail.com">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Mot de passe</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Connexion</button>
-                  </form>
+        <form action="addPerso.php" method="POST">
+            <div class="form-div">
+                <label for="perso_prenom">Prénom*</label>
+                <input type="text" name="perso_prenom" id="perso_prenom" placeholder="Prénom du personnage" required>
             </div>
-          </div>
+            <div class="form-div">
+                <label for="perso_prenom">Nom</label>
+                <input type="text" name="perso_nom" id="perso_nom" placeholder="Nom du personnage">
+            </div>
+            <div class="form-div">
+              <select name="perso_categorie" id="perso_categorie">
+                  <option selected>Veuillez selectionner une catégorie</option>
+                  <option value="1">Ordre Jedi</option>
+                  <option value="2">Sith</option>
+                  <option value="3">Chasseur de primes</option>
+              </select>
+            </div>
+            <div class='btn'>
+                <div class="form-btn">
+                    <input type="button" name="fermer" id="fermer" value="Fermer">
+                </div>
+                <div class="form-btn">
+                    <input type="submit">-
+                </div>
+            </div>
+        </form>
         </div>
-      </div>
+    </div>
+</div>

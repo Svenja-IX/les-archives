@@ -27,7 +27,7 @@
             </div> -->
             <div class='btn'>
                 <div class="form-btn">
-                    <input type="button" name="fermer" id="fermer" value="Fermer">
+                    <input type="button" name="fermerAddPerso" id="fermerAddPerso" value="Fermer">
                 </div>
                 <div class="form-btn">
                     <input type="submit">
