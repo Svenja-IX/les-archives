@@ -1,7 +1,9 @@
-<?php 
-include ('includes/header.php');
+<?php
 
 if (!empty($_POST['utilisateur_prenom']) && !empty($_POST['utilisateur_nom']) && !empty($_POST['utilisateur_mail']) && !empty($_POST['utilisateur_mdp']) && !empty($_POST['utilisateur_confirmMdp'])) {
+	if ($_POST['utilisateur_mdp'] == $_POST['utilisateur_confirmMdp']) {
+		# code...
+	
 	try{
 		# première étape : je me connecte au serveur
 		$sql = new PDO("mysql:host=localhost;dbname=les_archives", "root");
@@ -21,13 +23,16 @@ if (!empty($_POST['utilisateur_prenom']) && !empty($_POST['utilisateur_nom']) &&
 		// si la requete n'aboutit pas (car le mail n'a pas été rentré car il doit être unique,  
 		// alors la requete ne s'effectue pas, si l'email n'est pas dans la bdd la requete se fais sans soucis
 		if($stmt->rowCount()==1){
-			echo "<main id='insertMessage'>insertion réussie !</main>";
+			header('Location: index.php?success');
 		} else {
-			echo "<main id='insertMessage' style='background:black'>insertion foirée !</main>";
+			header('Location: index.php?fail');
 		}
 
 		} catch (PDOException $exception){
 			echo $exception->getMessage();
+		}
+	} else {
+		header('Location: index.php?errormdp');
 	}
 }
 ?>

@@ -5,7 +5,7 @@
             <div class="">
                 <h4>Inscription</h4>
             </div>
-        <form action="incription.php" method="POST">
+        <form action="inscription.php" method="POST">
         <div class="form-div">
                 <label for="utilisateur_prenom">Prénom</label>
                 <input type="text" name="utilisateur_prenom" id="utilisateur_prenom" placeholder="Votre prénom">
@@ -21,6 +21,10 @@
             <div class="form-div">
                 <label for="utilisateur_mdp">Mot de passe</label>
                 <input type="password" name="utilisateur_mdp" id="utilisateur_mdp" placeholder="Entrez un mot de passe">
+            </div>
+            <div class="form-div">
+                <label for="utilisateur_confirmMdp">Confirmer le mot de passe</label>
+                <input type="password" name="utilisateur_confirmMdp" id="utilisateur_confirmMdp" placeholder="Entrez le même mot de passe">
             </div>
             <div class='btn'>
                 <div class="form-btn">
