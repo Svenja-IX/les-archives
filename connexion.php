@@ -7,7 +7,7 @@ if (!empty($_POST['utilisateur_mail']) && !empty($_POST['utilisateur_mdp'])) {
 		try{
 			$sql = new PDO("mysql:host=localhost;dbname=les_archives", "root");
 			$requeteSQL = "SELECT * FROM `utilisateurs` WHERE utilisateur_mail = :utilisateur_mail";
-			// je premare ma requête
+			// je prepare ma requête
 			$connexion = $sql->prepare($requeteSQL);
 			
 			// je lui donne les paramètres dont elle a besoin sans en oublier
