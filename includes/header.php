@@ -1,6 +1,7 @@
 <?php 
-  require_once ('includes/bdd.php');
+  session_start();
 ?>
+
 <header>
 <?php 
 include ('includes/formInscription.php'); 
@@ -27,6 +28,7 @@ include ('includes/formConnexion.php');
   foreach($citations as $citation){
     echo '<h4>'.$citation['citation_description'].'</h4>';
   }  
+
   ?>
 </div>
 </header>

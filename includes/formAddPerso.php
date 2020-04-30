@@ -1,10 +1,10 @@
-<div id="modal">
+<div id="modal-add-perso">
     <div id="form-bloc">
         <div id="form-body">
             <div class="">
                 <h4>Ajouter un personnage</h4>
             </div>
-        <form action="addPerso.php" method="POST">
+        <form action="addPerso.php" method="POST" enctype="multipart/form-data">
             <div class="form-div">
                 <label for="perso_prenom">Prénom*</label>
                 <input type="text" name="perso_prenom" id="perso_prenom" placeholder="Prénom du personnage" required>
@@ -21,13 +21,13 @@
                 <option value="3">Chasseur de primes</option>
             </select>
             </div>
-            <!-- <div class="form-div">
+            <div class="form-div">
                 <label>Image*</label>
                 <input type="file" name="perso_img" id="perso_img" required>
-            </div> -->
+            </div>
             <div class='btn'>
                 <div class="form-btn">
-                    <input type="button" name="fermerAddPerso" id="fermerAddPerso" value="Fermer">
+                    <input type="button" name="fermer" id="fermer" value="Fermer">
                 </div>
                 <div class="form-btn">
                     <input type="submit">

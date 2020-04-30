@@ -1,4 +1,4 @@
-<div id="modal">
+<div id="modal-add-planete">
     <div id="form-bloc">
         <div id="form-body">
             <div class="">

@@ -71,16 +71,162 @@ $('.categories').each(function(){
 
 
 /******************************/
-// fonction ouverute/fermeture modal
-$("img").click(function(){
-        $('#modal').css({
+
+/******************************/
+// fonction ouverute/fermeture modal suppression arme
+$(".bloc-management").first().click(function(){
+        $('#modal-sup-arme').css({
                 "transition": "0.5s",
                 "display": "unset"
-                
         })
 });
-$("#fermerAddPerso").click(function(){
-        $('#modal').css({
+$("#fermer").first().click(function(){
+        $('#modal-sup-arme').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+// fonction ouverute/fermeture modal ajout arme
+$(".bloc-management").last().click(function(){
+        $('#modal-add-arme').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#modal-add-arme #fermer").last().click(function(){
+        $('#modal-add-arme').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+/******************************/
+// fonction ouverute/fermeture modal suppression personnage
+$(".bloc-management").first().click(function(){
+        $('#modal-sup-perso').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#fermer").first().click(function(){
+        $('#modal-sup-perso').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+// fonction ouverute/fermeture modal ajout personnage
+$(".bloc-management").last().click(function(){
+        $('#modal-add-perso').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#modal-add-perso #fermer").last().click(function(){
+        $('#modal-add-perso').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+// fonction ouverute/fermeture modal suppression organisation
+$(".bloc-management").first().click(function(){
+        $('#modal-sup-orga').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#fermer").first().click(function(){
+        $('#modal-sup-orga').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+// fonction ouverute/fermeture modal ajout organisation
+$(".bloc-management").last().click(function(){
+        $('#modal-add-orga').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#modal-add-orga #fermer").last().click(function(){
+        $('#modal-add-orga').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+// fonction ouverute/fermeture modal suppression planete
+$(".bloc-management").first().click(function(){
+        $('#modal-sup-planete').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#fermer").first().click(function(){
+        $('#modal-sup-planete').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+// fonction ouverute/fermeture modal ajout planete
+$(".bloc-management").last().click(function(){
+        $('#modal-add-planete').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#modal-add-planete #fermer").last().click(function(){
+        $('#modal-add-planete').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+// fonction ouverute/fermeture modal suppression vaisseau
+$(".bloc-management").first().click(function(){
+        $('#modal-sup-vaisseau').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#fermer").first().click(function(){
+        $('#modal-sup-vaisseau').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------
+
+// fonction ouverute/fermeture modal ajout planete
+$(".bloc-management").last().click(function(){
+        $('#modal-add-vaisseau').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#modal-add-vaisseau #fermer").last().click(function(){
+        $('#modal-add-vaisseau').css({
                 "transition": "0.5s",
                 "display": "none"
         })
@@ -92,7 +238,6 @@ $("#inscription-btn").click(function(){
         $('#modalInscription').css({
                 "transition": "0.5s",
                 "display": "unset"
-                
         })
 });
 $("#fermerInscription").click(function(){
@@ -108,7 +253,6 @@ $("#connexion-btn").click(function(){
         $('#modalConnexion').css({
                 "transition": "0.5s",
                 "display": "unset"
-                
         })
 });
 $("#fermerConnexion").click(function(){

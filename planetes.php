@@ -12,6 +12,7 @@
 <?php
     require_once('includes/bdd.php');
     include ('includes/header.php');
+    include ('includes/formSupPlanete.php'); 
     include ('includes/formAddPlanete.php'); 
 ?>
 <?php
@@ -28,7 +29,8 @@ echo '<article class="article">';
             </div>
         </a>';
     }
-    echo '<div id="bloc-plus"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';
+    echo '<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
+    echo '<div class="bloc-management"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';
     echo '</article>';
     echo '</main>';
 ?>

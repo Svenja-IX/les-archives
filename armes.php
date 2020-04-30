@@ -12,7 +12,9 @@
 <?php
     require_once('includes/bdd.php');
     include ('includes/header.php');
+    include ('includes/formSupArme.php'); 
     include ('includes/formAddArme.php'); 
+
 ?>
 <?php
 echo '<main id="main-personnage">';
@@ -28,7 +30,8 @@ echo '<article class="article">';
             </div>
         </a>';
     }
-    echo '<div id="bloc-plus"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';
+    echo '<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
+    echo '<div class="bloc-management"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';
     echo '</article>';
     echo '</main>';
 ?>
