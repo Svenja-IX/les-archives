@@ -1,11 +1,15 @@
-<?php 
-  session_start();
-?>
-
 <header>
 <?php 
-include ('includes/formInscription.php'); 
-include ('includes/formConnexion.php'); 
+  session_start();
+
+  if (empty($_SESSION)) {
+      include ('includes/formInscription.php'); 
+      include ('includes/formConnexion.php');    
+      // include ('includes/formCommentaire.php');     
+  }
+  else {
+      include ('includes/deconnexion.php'); 
+  }
 ?>
         <h1 id='header-title'><a href="index.php">Les archives</a></h1>
 <nav role="navigation">

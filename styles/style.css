@@ -128,6 +128,12 @@ header a:hover {
   top: 43px;
   z-index: 5;
 }
+
+#deconnexion-btn {
+  right: 93px;
+  top: 43px;
+  z-index: 5;
+}
 #citation-div {
   background: rgba(0, 0, 0,60%);
   width: 300px;
@@ -304,7 +310,6 @@ header a:hover {
 }
 #form-body h4 {
   font-size: 20px;
-
   margin: 15px;
   text-shadow: cornflowerblue 0px 1px 10px;
 }
@@ -321,7 +326,7 @@ header a:hover {
   justify-content: end;
   margin: 10px;
 }
-.form-btn input {
+.form-btn input, header input {
   height: 30px;
   width: 100px;
   background: white;
@@ -330,7 +335,7 @@ header a:hover {
   transition: 0.25s;
 }
 
-.form-btn input:hover {
+.form-btn input:hover, header input:hover {
   background:rgb(113, 171, 236);
   transition: 0.25s;
 }
