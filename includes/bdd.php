@@ -25,7 +25,6 @@ try {
     $vaisseaux->setFetchMode(PDO::FETCH_ASSOC);
 
     $citations = $pdo->query("SELECT citation_description, citation_perso FROM citation ORDER BY RAND () LIMIT 1");
-
 }  catch (Exception $exception) {
 
     $messageError = $exception->getMessage();

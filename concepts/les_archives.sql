@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 23 avr. 2020 à 12:01
+-- Généré le : jeu. 14 mai 2020 à 13:34
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -204,6 +204,14 @@ CREATE TABLE `roles` (
   `role_nom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Déchargement des données de la table `roles`
+--
+
+INSERT INTO `roles` (`role_id`, `role_nom`) VALUES
+(1, 'visiteur'),
+(2, 'utilisateur confirmé');
+
 -- --------------------------------------------------------
 
 --
@@ -216,19 +224,16 @@ CREATE TABLE `utilisateurs` (
   `utilisateur_nom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `utilisateur_mail` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `utilisateur_mdp` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `utilisateur_img` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `utilisateur_img` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `utilisateur_role` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Structure de la table `utilisateurs_roles`
+-- Déchargement des données de la table `utilisateurs`
 --
 
-CREATE TABLE `utilisateurs_roles` (
-  `utilisateur_id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `utilisateurs` (`utilisateur_id`, `utilisateur_prenom`, `utilisateur_nom`, `utilisateur_mail`, `utilisateur_mdp`, `utilisateur_img`, `utilisateur_role`) VALUES
+(3, 'Axel', 'Abad', 'axel.abad0901@gmail.com', '$2y$10$5P5TqAID6hgbktQAcFyuee.5gcGtSvb6bkJsZC59VO6qQxy4ofS/.', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -338,14 +343,8 @@ ALTER TABLE `roles`
 -- Index pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  ADD PRIMARY KEY (`utilisateur_id`);
-
---
--- Index pour la table `utilisateurs_roles`
---
-ALTER TABLE `utilisateurs_roles`
-  ADD KEY `role_id` (`role_id`),
-  ADD KEY `utilisateur_id` (`utilisateur_id`);
+  ADD PRIMARY KEY (`utilisateur_id`),
+  ADD KEY `utilisateur_role` (`utilisateur_role`);
 
 --
 -- Index pour la table `vaisseaux`
@@ -404,13 +403,13 @@ ALTER TABLE `planetes`
 -- AUTO_INCREMENT pour la table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `utilisateur_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `utilisateur_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `vaisseaux`
@@ -482,11 +481,10 @@ ALTER TABLE `planetes`
   ADD CONSTRAINT `planetes_ibfk_1` FOREIGN KEY (`planete_categorie`) REFERENCES `categories` (`categorie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Contraintes pour la table `utilisateurs_roles`
+-- Contraintes pour la table `utilisateurs`
 --
-ALTER TABLE `utilisateurs_roles`
-  ADD CONSTRAINT `utilisateurs_roles_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `utilisateurs_roles_ibfk_2` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`utilisateur_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `utilisateurs`
+  ADD CONSTRAINT `utilisateurs_ibfk_1` FOREIGN KEY (`utilisateur_role`) REFERENCES `roles` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `vaisseaux`

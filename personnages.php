@@ -12,8 +12,15 @@
 <?php
     require_once('includes/bdd.php');
     include ('includes/header.php');
-    include ('includes/formSupPerso.php'); 
-    include ('includes/formAddPerso.php'); 
+
+    if (empty($_SESSION)) {
+             
+    }
+    else {
+        include ('includes/formSupPerso.php'); 
+        include ('includes/formAddPerso.php'); 
+    }
+    
 ?>
 <?php
 echo '<main id="main-personnage">';
@@ -29,8 +36,13 @@ echo '<article class="article">';
             </div>
         </a>';
     }
-    echo'<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
-    echo'<div class="bloc-management"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';
+   //on affiche rien car on ne veut pas qu'un visiteur puisse supprimer ou ajouter
+    if (!empty($_SESSION) && $_SESSION['user']->utilisateur_role == 2) {
+            include ('includes/formSupPerso.php'); 
+            include ('includes/formAddPerso.php');
+            echo'<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
+            echo'<div class="bloc-management"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';     
+    }
     echo '</article>';
     echo '</main>';
 ?>
