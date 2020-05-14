@@ -12,8 +12,7 @@
 <?php
     require_once('includes/bdd.php');
     include ('includes/header.php');
-    include ('includes/formSupArme.php'); 
-    include ('includes/formAddArme.php'); 
+
 
 ?>
 <?php
@@ -30,8 +29,12 @@ echo '<article class="article">';
             </div>
         </a>';
     }
-    echo '<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
-    echo '<div class="bloc-management"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';
+    if (!empty($_SESSION) && $_SESSION['user']->utilisateur_role >= 2) {
+        include ('includes/formSupArme.php'); 
+        include ('includes/formAddArme.php'); 
+        echo'<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
+        echo'<div class="bloc-management"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';     
+}
     echo '</article>';
     echo '</main>';
 ?>

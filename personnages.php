@@ -37,7 +37,7 @@ echo '<article class="article">';
         </a>';
     }
    //on affiche rien car on ne veut pas qu'un visiteur puisse supprimer ou ajouter
-    if (!empty($_SESSION) && $_SESSION['user']->utilisateur_role == 2) {
+    if (!empty($_SESSION) && $_SESSION['user']->utilisateur_role >= 2) {
             include ('includes/formSupPerso.php'); 
             include ('includes/formAddPerso.php');
             echo'<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
