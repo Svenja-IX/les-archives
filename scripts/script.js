@@ -261,3 +261,19 @@ $("#fermerConnexion").click(function(){
                 "display": "none"
         })
 });
+
+// fonction ouverute/fermeture modal update perso
+$("#perso-update-btn").click(function(){
+        $('#modal-update-perso').css({
+                "transition": "0.5s",
+                "display": "unset"
+        })
+});
+$("#fermer").first().click(function(){
+        $('#modal-update-perso').css({
+                "transition": "0.5s",
+                "display": "none"
+        })
+});
+
+//------------------------------------

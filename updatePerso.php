@@ -8,7 +8,8 @@ if (!empty($_POST['perso_prenom']) && !empty($_POST['perso_nom']) && isset($_FIL
 		$addPerso->exec('SET NAMES utf8');
 		
 		// je premare ma requête
-		$stmt = $addPerso->prepare("INSERT INTO `personnages` (`perso_prenom`, `perso_nom`, `perso_img`) VALUES (:perso_prenom, :perso_nom, :perso_img)");
+		// $stmt = $addPerso->prepare("UPDATE `personnages` SET `perso_prenom`= :perso_prenom,`perso_nom`= :perso_nom,`perso_img`= :perso_img,`perso_bio`= :perso_bio,`perso_categorie`= :perso_categorie,`perso_race`= :perso_race WHERE perso_id = :perso_id ");
+		$stmt = $addPerso->prepare("UPDATE `personnages` SET `perso_prenom`= :perso_prenom,`perso_nom`= :perso_nom,`perso_img`= :perso_img,`perso_bio`= :perso_bio WHERE perso_id = :perso_id ");
 
 		$file = $_FILES['perso_img'];
 
@@ -30,9 +31,13 @@ if (!empty($_POST['perso_prenom']) && !empty($_POST['perso_nom']) && isset($_FIL
                     $fileDestination = 'uploads/'.$fileNameNew;
 					move_uploaded_file($fileTmpName, $fileDestination);
 
-					// je lui donne les paramètres dont elle a besoin sans en oublier
+                    // je lui donne les paramètres dont elle a besoin sans en oublier
+                    $stmt->bindValue(":perso_id", $_GET["perso_id"]);
 					$stmt->bindValue(":perso_prenom", $_POST['perso_prenom']);
-					$stmt->bindValue(":perso_nom", $_POST['perso_nom']);
+                    $stmt->bindValue(":perso_nom", $_POST['perso_nom']);
+                    $stmt->bindValue(":perso_bio", $_POST['perso_bio']);
+                    // $stmt->bindValue(":perso_categorie", $_POST['perso_categorie']);
+                    // $stmt->bindValue(":perso_race", $_POST['perso_race']);
 					$stmt->bindValue(":perso_img", $fileDestination);
 
 					// Je l'execute et en fonction de si l'email existe deja ou pas, j'insere ma requete dans la bdd

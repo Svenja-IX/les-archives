@@ -8,18 +8,9 @@
     <link rel="icon" href="images/holocron-icon.png">
 </head>
 <body>
-<body>
 <?php
     require_once('includes/bdd.php');
     include ('includes/header.php');
-
-    if (empty($_SESSION)) {
-             
-    }
-    else {
-        include ('includes/formSupPerso.php'); 
-        include ('includes/formAddPerso.php'); 
-    }
     
 ?>
 <?php
@@ -28,23 +19,23 @@ echo '<article class="article">';
 
     foreach($personnages as $personnage){
     
-    // j'afficher chaque ligne dans une card
-    echo '<a href="'.$personnage['perso_prenom']."-".$personnage['perso_nom'].".php".'" id="lien-categories">
-            <div class="theBlockInto">
-                <img class="categories-img" src="'.$personnage['perso_img'].'" alt="image">
-                <h5 class="categories-title">'.$personnage['perso_prenom']."<br>".$personnage['perso_nom'].'</h5>
-            </div>
-        </a>';
-    }
-   //on affiche rien car on ne veut pas qu'un visiteur puisse supprimer ou ajouter
-    if (!empty($_SESSION) && $_SESSION['user']->utilisateur_role >= 2) {
-            include ('includes/formSupPerso.php'); 
-            include ('includes/formAddPerso.php');
-            echo'<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
-            echo'<div class="bloc-management"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';     
-    }
-    echo '</article>';
-    echo '</main>';
+// j'afficher chaque ligne dans une card
+echo '<a href="article.php?perso_id='.$personnage['perso_id'].'" id="lien-categories">
+        <div class="theBlockInto">
+            <img class="categories-img" src="'.$personnage['perso_img'].'" alt="image">
+            <h5 class="categories-title">'.$personnage['perso_prenom']."<br>".$personnage['perso_nom'].'</h5>
+        </div>
+      </a>';
+}
+//on affiche rien car on ne veut pas qu'un visiteur puisse supprimer ou ajouter
+if (!empty($_SESSION) && $_SESSION['user']->utilisateur_role >= 2) {
+        include ('includes/formSupPerso.php'); 
+        include ('includes/formAddPerso.php');
+        echo'<div class="bloc-management"><img class="add" src="images/moins.png" style="cursor: pointer"></div>';
+        echo'<div class="bloc-management"><img class="add" src="images/plus.png" style="cursor: pointer"></div>';     
+}
+echo '</article>';
+echo '</main>';
 ?>
 
 
