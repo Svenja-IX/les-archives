@@ -21,7 +21,7 @@ echo '<article class="article">';
     foreach($organisations as $organisation){
     
     // j'afficher chaque ligne dans une card
-    echo '<a href="'.$organisation['organisation_nom'].".php".'" id="lien-categories">
+    echo '<a href="article-organisation.php?organisation_id='.$organisation['organisation_id'].'" id="lien-categories">
             <div class="theBlockInto">
                 <img class="categories-img" src="'.$organisation['organisation_img'].'" alt="image">
                 <h5 class="categories-title">'.$organisation['organisation_nom'].'</h5>

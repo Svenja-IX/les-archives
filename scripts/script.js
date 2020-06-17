@@ -277,3 +277,17 @@ $("#fermer").first().click(function(){
 });
 
 //------------------------------------
+
+// $('#edition').click(function() {
+// InlineEditor
+//         .create(document.querySelector('#edition'))
+//         $(this).css({
+//                 "background": "rgb(20,20,20)"
+//         })
+// });
+// $('#perso-update-btn').click(function() {
+// editor.fired()
+//     .catch(error => {
+//         console.log(error);
+//     });
+// });

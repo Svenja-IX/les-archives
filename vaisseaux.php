@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personnages - Les archives</title>
+    <title>Vaisseaux - Les archives</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="images/holocron-icon.png">
 </head>
@@ -21,7 +21,7 @@ echo '<article class="article">';
     foreach($vaisseaux as $vaisseau){
     
     // j'afficher chaque ligne dans une card
-    echo '<a href="'.$vaisseau['vaisseau_nom'].".php".'" id="lien-categories">
+    echo '<a href="article-vaisseau.php?vaisseau_id='.$vaisseau['vaisseau_id'].'" id="lien-categories">
             <div class="theBlockInto">
                 <img class="categories-img" src="'.$vaisseau['vaisseau_img'].'" alt="image">
                 <h5 class="categories-title">'.$vaisseau['vaisseau_nom'].'</h5>

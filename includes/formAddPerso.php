@@ -4,17 +4,17 @@
             <div class="">
                 <h4>Ajouter un personnage</h4>
             </div>
-        <form action="updatePerso.php" method="POST" enctype="multipart/form-data">
+        <form action="addPerso.php" method="POST" enctype="multipart/form-data">
             <div class="form-div">
                 <label for="perso_prenom">Prénom*</label>
                 <input type="text" name="perso_prenom" id="perso_prenom" placeholder="Prénom du personnage" required>
             </div>
             <div class="form-div">
-                <label for="perso_prenom">Nom</label>
+                <label for="perso_nom">Nom</label>
                 <input type="text" name="perso_nom" id="perso_nom" placeholder="Nom du personnage">
             </div>
             <div class="form-div">
-                <label>Image*</label>
+                <label>Image* (format carré SVP)</label>
                 <input type="file" name="perso_img" id="perso_img" required>
             </div>
             <div class='btn'>

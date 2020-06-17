@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personnages - Les archives</title>
+    <title>Armes - Les archives</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="images/holocron-icon.png">
 </head>
@@ -22,7 +22,7 @@ echo '<article class="article">';
     foreach($armes as $arme){
     
     // j'afficher chaque ligne dans une card
-    echo '<a href="'.$arme['arme_nom'].".php".'" id="lien-categories">
+    echo '<a href="article-arme.php?arme_id='.$arme['arme_id'].'" id="lien-categories">
             <div class="theBlockInto">
                 <img class="categories-img" src="'.$arme['arme_img'].'" alt="image">
                 <h5 class="categories-title">'.$arme['arme_nom'].'</h5>

@@ -42,7 +42,7 @@ body {
   position: absolute;
   padding-bottom: 100px;
 }
-#main-personnage {
+#main-personnage, #main-vaisseau, #main-arme, #main-planete, #main-organisation {
   margin-top: 300px;
   height: auto;
   width: 100%;
@@ -54,6 +54,7 @@ article {
   min-width: 950px;
   /* height: 800px; */
   margin: auto;
+  margin-bottom: 33px;
   display: flex;
   flex-wrap: wrap;
   color: white;
@@ -99,9 +100,11 @@ aside {
 }
 #article-float-right {
   float: right;
+  /* border: solid white 1px; */
 }
 #article-img {
   width: 250px;
+  /* border-bottom: solid white 1px; */
 }
 header {
   position: absolute;
@@ -146,7 +149,7 @@ header a:hover {
 #citation-div {
   background: rgba(0, 0, 0,60%);
   width: 300px;
-  height: 65px;
+  height: auto;
   margin: auto;
   position: absolute;
   right: 401.75px;
@@ -471,4 +474,8 @@ input:required:focus {
 }
 #menuToggle input:checked ~ ul {
   transform: none;
+}
+.ck {
+  --ck-color-base-background: rgb(30,30,30);
+  color: white;
 }

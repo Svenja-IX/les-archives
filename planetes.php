@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personnages - Les archives</title>
+    <title>Planetes - Les archives</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="images/holocron-icon.png">
 </head>
@@ -21,7 +21,7 @@ echo '<article class="article">';
     foreach($planetes as $planete){
     
     // j'afficher chaque ligne dans une card
-    echo '<a href="'.$planete['planete_nom'].".php".'" id="lien-categories">
+    echo '<a href="article-planete.php?planete_id='.$planete['planete_id'].'" id="lien-categories">
             <div class="theBlockInto">
                 <img class="categories-img" src="'.$planete['planete_img'].'" alt="image">
                 <h5 class="categories-title">'.$planete['planete_nom'].'</h5>

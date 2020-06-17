@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 14 mai 2020 à 13:34
+-- Généré le : mer. 17 juin 2020 à 14:26
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -31,9 +31,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `armes` (
   `arme_id` int(11) NOT NULL,
   `arme_nom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `arme_img` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `arme_categorie` int(11) NOT NULL
+  `arme_bio` longtext COLLATE utf8mb4_unicode_ci,
+  `arme_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `armes`
+--
+
+INSERT INTO `armes` (`arme_id`, `arme_nom`, `arme_bio`, `arme_img`) VALUES
+(3, 'hey there', NULL, 'uploads/5ee9cc45012752.27825361.jpg'),
+(5, 'ak47', NULL, 'uploads/5eea251dcb6259.88755185.png');
 
 -- --------------------------------------------------------
 
@@ -104,26 +112,6 @@ CREATE TABLE `articles_vaisseaux` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categories`
---
-
-CREATE TABLE `categories` (
-  `categorie_id` int(11) NOT NULL,
-  `categorie_nom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `categories`
---
-
-INSERT INTO `categories` (`categorie_id`, `categorie_nom`) VALUES
-(1, 'ordre Jedi'),
-(2, 'sith'),
-(3, 'chasseur de primes');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `citation`
 --
 
@@ -151,9 +139,17 @@ INSERT INTO `citation` (`citation_id`, `citation_perso`, `citation_description`)
 CREATE TABLE `organisations` (
   `organisation_id` int(11) NOT NULL,
   `organisation_nom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `organisation_img` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `organisation_categorie` int(11) NOT NULL
+  `organisation_bio` longtext COLLATE utf8mb4_unicode_ci,
+  `organisation_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `organisation_categorie` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `organisations`
+--
+
+INSERT INTO `organisations` (`organisation_id`, `organisation_nom`, `organisation_bio`, `organisation_img`, `organisation_categorie`) VALUES
+(2, 'mandalorien', NULL, 'uploads/5ee9cd39cc0702.65137356.png', NULL);
 
 -- --------------------------------------------------------
 
@@ -165,20 +161,18 @@ CREATE TABLE `personnages` (
   `perso_id` int(11) NOT NULL,
   `perso_prenom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `perso_nom` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `perso_race` int(11) DEFAULT NULL,
+  `perso_bio` longtext COLLATE utf8mb4_unicode_ci,
   `perso_img` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `perso_categorie` int(11) NOT NULL
+  `perso_categorie` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `personnages`
 --
 
-INSERT INTO `personnages` (`perso_id`, `perso_prenom`, `perso_nom`, `perso_img`, `perso_categorie`) VALUES
-(1, 'anakin', 'skywalker', 'images/anakin-skywalker.jpg', 1),
-(2, 'obi-Wan', 'kenobi', 'images/obi-wan-kenobi.jpg', 1),
-(3, 'maul', NULL, 'images/maul.jpg', 2),
-(4, 'Sheev', 'Palpatine', 'images/sheev-palpatine.jpg', 2),
-(5, 'jango', 'fett', 'images/jango-fett.png', 3);
+INSERT INTO `personnages` (`perso_id`, `perso_prenom`, `perso_nom`, `perso_race`, `perso_bio`, `perso_img`, `perso_categorie`) VALUES
+(5, 'Anakin', 'Skywalker', NULL, 'Je suis trop fort ! Et oui petit connard de merde', 'uploads/5ee88584de2f94.56663938.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -189,9 +183,36 @@ INSERT INTO `personnages` (`perso_id`, `perso_prenom`, `perso_nom`, `perso_img`,
 CREATE TABLE `planetes` (
   `planete_id` int(11) NOT NULL,
   `planete_nom` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `planete_img` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `planete_categorie` int(11) NOT NULL
+  `planete_bio` longtext COLLATE utf8mb4_unicode_ci,
+  `planete_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `planetes`
+--
+
+INSERT INTO `planetes` (`planete_id`, `planete_nom`, `planete_bio`, `planete_img`) VALUES
+(3, 'Naboo', NULL, 'uploads/5ee9ce1cd975b1.21118941.png');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `races`
+--
+
+CREATE TABLE `races` (
+  `race_id` int(11) NOT NULL,
+  `race_nom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `races`
+--
+
+INSERT INTO `races` (`race_id`, `race_nom`) VALUES
+(1, 'Humain'),
+(2, 'Togruta'),
+(3, 'Zabrak');
 
 -- --------------------------------------------------------
 
@@ -209,8 +230,9 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`role_id`, `role_nom`) VALUES
-(1, 'visiteur'),
-(2, 'utilisateur confirmé');
+(1, 'Utilisateur'),
+(2, 'Modérateur'),
+(3, 'Administrateur');
 
 -- --------------------------------------------------------
 
@@ -233,7 +255,9 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`utilisateur_id`, `utilisateur_prenom`, `utilisateur_nom`, `utilisateur_mail`, `utilisateur_mdp`, `utilisateur_img`, `utilisateur_role`) VALUES
-(3, 'Axel', 'Abad', 'axel.abad0901@gmail.com', '$2y$10$5P5TqAID6hgbktQAcFyuee.5gcGtSvb6bkJsZC59VO6qQxy4ofS/.', NULL, 1);
+(3, 'Axel', 'Abad', 'axel.abad0901@gmail.com', '$2y$10$5P5TqAID6hgbktQAcFyuee.5gcGtSvb6bkJsZC59VO6qQxy4ofS/.', NULL, 3),
+(4, 'Theo', 'Ozenda', 'ozendatheo@gmail.com', '$2y$10$tjsxLGFa5.wnCPNbN/qcyOq4H9F2TFLc9xbBc2e.4yp5A/k65aLl2', NULL, 2),
+(5, 'connard', 'demerde', 'connarddemerde@gmail.com', '$2y$10$x65N9m4LHP6fkT3arZvB8OUBFTIYsEqK4YFo3c0/Xw23VUgkKZY4i', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -244,9 +268,16 @@ INSERT INTO `utilisateurs` (`utilisateur_id`, `utilisateur_prenom`, `utilisateur
 CREATE TABLE `vaisseaux` (
   `vaisseau_id` int(11) NOT NULL,
   `vaisseau_nom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `vaisseau_img` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `vaisseau_categorie` int(11) NOT NULL
+  `vaisseau_bio` longtext COLLATE utf8mb4_unicode_ci,
+  `vaisseau_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `vaisseaux`
+--
+
+INSERT INTO `vaisseaux` (`vaisseau_id`, `vaisseau_nom`, `vaisseau_bio`, `vaisseau_img`) VALUES
+(2, 'hello', NULL, 'uploads/5ee9c8bf8013d4.02658965.png');
 
 --
 -- Index pour les tables déchargées
@@ -256,8 +287,7 @@ CREATE TABLE `vaisseaux` (
 -- Index pour la table `armes`
 --
 ALTER TABLE `armes`
-  ADD PRIMARY KEY (`arme_id`),
-  ADD KEY `armes_ibfk_1` (`arme_categorie`);
+  ADD PRIMARY KEY (`arme_id`);
 
 --
 -- Index pour la table `articles`
@@ -301,12 +331,6 @@ ALTER TABLE `articles_vaisseaux`
   ADD KEY `vaisseau_id` (`vaisseau_id`);
 
 --
--- Index pour la table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`categorie_id`);
-
---
 -- Index pour la table `citation`
 --
 ALTER TABLE `citation`
@@ -324,14 +348,20 @@ ALTER TABLE `organisations`
 --
 ALTER TABLE `personnages`
   ADD PRIMARY KEY (`perso_id`),
-  ADD KEY `perso_categorie` (`perso_categorie`);
+  ADD KEY `perso_categorie` (`perso_categorie`),
+  ADD KEY `perso_race` (`perso_race`);
 
 --
 -- Index pour la table `planetes`
 --
 ALTER TABLE `planetes`
-  ADD PRIMARY KEY (`planete_id`),
-  ADD KEY `planete_categorie` (`planete_categorie`);
+  ADD PRIMARY KEY (`planete_id`);
+
+--
+-- Index pour la table `races`
+--
+ALTER TABLE `races`
+  ADD PRIMARY KEY (`race_id`);
 
 --
 -- Index pour la table `roles`
@@ -350,8 +380,7 @@ ALTER TABLE `utilisateurs`
 -- Index pour la table `vaisseaux`
 --
 ALTER TABLE `vaisseaux`
-  ADD PRIMARY KEY (`vaisseau_id`),
-  ADD KEY `vaisseau_categorie` (`vaisseau_categorie`);
+  ADD PRIMARY KEY (`vaisseau_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -361,19 +390,13 @@ ALTER TABLE `vaisseaux`
 -- AUTO_INCREMENT pour la table `armes`
 --
 ALTER TABLE `armes`
-  MODIFY `arme_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `arme_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
   MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `citation`
@@ -385,47 +408,47 @@ ALTER TABLE `citation`
 -- AUTO_INCREMENT pour la table `organisations`
 --
 ALTER TABLE `organisations`
-  MODIFY `organisation_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `organisation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `personnages`
 --
 ALTER TABLE `personnages`
-  MODIFY `perso_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `perso_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `planetes`
 --
 ALTER TABLE `planetes`
-  MODIFY `planete_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `planete_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `races`
+--
+ALTER TABLE `races`
+  MODIFY `race_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `utilisateur_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `utilisateur_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `vaisseaux`
 --
 ALTER TABLE `vaisseaux`
-  MODIFY `vaisseau_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `vaisseau_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
 --
-
---
--- Contraintes pour la table `armes`
---
-ALTER TABLE `armes`
-  ADD CONSTRAINT `armes_ibfk_1` FOREIGN KEY (`arme_categorie`) REFERENCES `categories` (`categorie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `articles_armes`
@@ -463,34 +486,17 @@ ALTER TABLE `articles_vaisseaux`
   ADD CONSTRAINT `articles_vaisseaux_ibfk_2` FOREIGN KEY (`vaisseau_id`) REFERENCES `vaisseaux` (`vaisseau_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Contraintes pour la table `organisations`
---
-ALTER TABLE `organisations`
-  ADD CONSTRAINT `organisations_ibfk_1` FOREIGN KEY (`organisation_categorie`) REFERENCES `categories` (`categorie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Contraintes pour la table `personnages`
 --
 ALTER TABLE `personnages`
-  ADD CONSTRAINT `personnages_ibfk_1` FOREIGN KEY (`perso_categorie`) REFERENCES `categories` (`categorie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `planetes`
---
-ALTER TABLE `planetes`
-  ADD CONSTRAINT `planetes_ibfk_1` FOREIGN KEY (`planete_categorie`) REFERENCES `categories` (`categorie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `personnages_ibfk_1` FOREIGN KEY (`perso_categorie`) REFERENCES `categories` (`categorie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `personnages_ibfk_2` FOREIGN KEY (`perso_race`) REFERENCES `races` (`race_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
   ADD CONSTRAINT `utilisateurs_ibfk_1` FOREIGN KEY (`utilisateur_role`) REFERENCES `roles` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `vaisseaux`
---
-ALTER TABLE `vaisseaux`
-  ADD CONSTRAINT `vaisseaux_ibfk_1` FOREIGN KEY (`vaisseau_categorie`) REFERENCES `categories` (`categorie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

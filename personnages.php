@@ -14,13 +14,14 @@
     
 ?>
 <?php
+
 echo '<main id="main-personnage">';
 echo '<article class="article">';
 
     foreach($personnages as $personnage){
     
 // j'afficher chaque ligne dans une card
-echo '<a href="article.php?perso_id='.$personnage['perso_id'].'" id="lien-categories">
+echo '<a href="article-personnage.php?perso_id='.$personnage['perso_id'].'" id="lien-categories">
         <div class="theBlockInto">
             <img class="categories-img" src="'.$personnage['perso_img'].'" alt="image">
             <h5 class="categories-title">'.$personnage['perso_prenom']."<br>".$personnage['perso_nom'].'</h5>
