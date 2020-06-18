@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 17 juin 2020 à 14:26
+-- Généré le : jeu. 18 juin 2020 à 12:16
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -34,14 +34,6 @@ CREATE TABLE `armes` (
   `arme_bio` longtext COLLATE utf8mb4_unicode_ci,
   `arme_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `armes`
---
-
-INSERT INTO `armes` (`arme_id`, `arme_nom`, `arme_bio`, `arme_img`) VALUES
-(3, 'hey there', NULL, 'uploads/5ee9cc45012752.27825361.jpg'),
-(5, 'ak47', NULL, 'uploads/5eea251dcb6259.88755185.png');
 
 -- --------------------------------------------------------
 
@@ -144,13 +136,6 @@ CREATE TABLE `organisations` (
   `organisation_categorie` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Déchargement des données de la table `organisations`
---
-
-INSERT INTO `organisations` (`organisation_id`, `organisation_nom`, `organisation_bio`, `organisation_img`, `organisation_categorie`) VALUES
-(2, 'mandalorien', NULL, 'uploads/5ee9cd39cc0702.65137356.png', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -167,13 +152,6 @@ CREATE TABLE `personnages` (
   `perso_categorie` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Déchargement des données de la table `personnages`
---
-
-INSERT INTO `personnages` (`perso_id`, `perso_prenom`, `perso_nom`, `perso_race`, `perso_bio`, `perso_img`, `perso_categorie`) VALUES
-(5, 'Anakin', 'Skywalker', NULL, 'Je suis trop fort ! Et oui petit connard de merde', 'uploads/5ee88584de2f94.56663938.jpg', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -186,13 +164,6 @@ CREATE TABLE `planetes` (
   `planete_bio` longtext COLLATE utf8mb4_unicode_ci,
   `planete_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `planetes`
---
-
-INSERT INTO `planetes` (`planete_id`, `planete_nom`, `planete_bio`, `planete_img`) VALUES
-(3, 'Naboo', NULL, 'uploads/5ee9ce1cd975b1.21118941.png');
 
 -- --------------------------------------------------------
 
@@ -271,13 +242,6 @@ CREATE TABLE `vaisseaux` (
   `vaisseau_bio` longtext COLLATE utf8mb4_unicode_ci,
   `vaisseau_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `vaisseaux`
---
-
-INSERT INTO `vaisseaux` (`vaisseau_id`, `vaisseau_nom`, `vaisseau_bio`, `vaisseau_img`) VALUES
-(2, 'hello', NULL, 'uploads/5ee9c8bf8013d4.02658965.png');
 
 --
 -- Index pour les tables déchargées
@@ -414,7 +378,7 @@ ALTER TABLE `organisations`
 -- AUTO_INCREMENT pour la table `personnages`
 --
 ALTER TABLE `personnages`
-  MODIFY `perso_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `perso_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `planetes`
