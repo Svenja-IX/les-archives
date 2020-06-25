@@ -57,7 +57,6 @@ foreach($pages_personnages as $page_personnage){
         <li><b>Prénom</b> : '.$page_personnage['perso_prenom'].'</li>
         <li><b>Nom</b> : '.$page_personnage['perso_nom'].'</li>
         <li><b>Race</b> : '.$page_personnage['perso_race'].'</li>
-        <li><b>Rang</b> : </li>
         </ul>
         </div>
             <p id="edition">'.$page_personnage['perso_bio'].'</p>
@@ -65,7 +64,7 @@ foreach($pages_personnages as $page_personnage){
 }
 
 if (!empty($_SESSION) && $_SESSION['user']->utilisateur_role >= 2) {
-    echo '<a href="article-up-personnage.php?perso_id='.$_GET["perso_id"].'"><input type="button" value="Modifier" id="perso-update-btn"></a>';
+    echo '<a class="article-up-btn" href="article-up-personnage.php?perso_id='.$_GET["perso_id"].'"><input type="button" value="Modifier" id="perso-update-btn"></a>';
 }
 echo '</article>';
     //     $link = explode('.', $_SERVER['PHP_SELF']);

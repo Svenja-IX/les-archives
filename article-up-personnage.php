@@ -50,13 +50,12 @@ echo '  <article>
         <div id="article-float-right">
         <img id="article-img" src="'.$page_personnage['perso_img'].'">
         <ul>
-        <li><b>Prénom</b> : '.$page_personnage['perso_prenom'].'</li>
-        <li><b>Nom</b> : '.$page_personnage['perso_nom'].'</li>
-        <li><b>Race</b> : '.$page_personnage['perso_race'].'</li>
-        <li><b>Rang</b> : </li>
+        <li><b>Prénom</b> : <textarea name="perso_prenom" id="perso_prenom" class="perso-bio-aside">'.$page_personnage['perso_prenom'].'</textarea></li>
+        <li><b>Nom</b> : <textarea name="perso_nom" id="perso_nom" class="perso-bio-aside">'.$page_personnage['perso_nom'].'</textarea></li>
+        <li><b>Race</b> :'.$page_personnage['perso_race'].'</li>
         </ul>
         </div id="bio-edition">
-            <textarea name="perso_bio" id="perso_bio">'.$page_personnage['perso_bio'].'</textarea>
+            <textarea name="perso_bio" id="perso_bio" class="perso-bio">'.$page_personnage['perso_bio'].'</textarea>
         </div>
         <input type="submit" value="Sauvegarder" name="perso-update-btn" id="perso-update-btn">
         </form>

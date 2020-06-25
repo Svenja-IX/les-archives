@@ -104,6 +104,7 @@ aside {
 }
 #article-img {
   width: 250px;
+  height: 250px;
   /* border-bottom: solid white 1px; */
 }
 header {
@@ -478,4 +479,108 @@ input:required:focus {
 .ck {
   --ck-color-base-background: rgb(30,30,30);
   color: white;
+}
+.perso-bio {
+  width: 615px;
+  height: 600px;
+  resize: none;
+  background: rgb(30,30,30);
+  color: white;
+}
+.perso-bio-aside {
+  width: 160px;
+  height: 25px;
+  resize: none;
+  background: rgb(30,30,30);
+  color: white;
+  display: flex;
+  margin-bottom: 15px;
+}
+.article-up-btn {
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+/* media queries start */
+
+/* media queries iphone X */
+@media screen and (max-width: 400px) {
+  article {
+    display: unset;
+  }
+
+  #article-categorie {
+    display: unset;
+    padding-top: 50px;
+  }
+
+  #article-categorie .categories {
+    color: white;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    margin: auto;
+    background: rgb(30,30,30);
+    transition: 0.5s;
+    margin-bottom: 50px;
+}
+#article-categorie .categories-img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: solid rgb(30,30,30) 1px;
+}
+#article-categorie .categories-body h5 {
+  color: white;
+  text-shadow: rgb(30,30,30) 0px 4px 3px;
+  z-index: 10;
+  font-size: 20px;
+}
+body {
+  background-color: rgb(10, 10, 10);
+  background: url('../images/Jedi-Archives.jpg') repeat;
+  background-size: auto;
+  opacity: 0;
+  transition: 0.5s;
+  margin: 0;
+}
+#header-title {
+  font-size: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: grey;
+  transition: 0.5s;
+  position: absolute;
+  margin-top: 125px;
+}
+#connexion-btn {
+  right: 117px;
+  top: 37px;
+  z-index: 5;
+}
+#inscription-btn {
+  right: 15px;
+  top: 37px;
+  z-index: 5;
+}
+#form-body {
+  width: 600px;
+  height: 300px;
+  margin: 0;
+  background: rgba(30,30,30,100%);
+  border: rgb(15,15,15) solid 1px;
+}
+.btn {
+  display: flex;
+  justify-content: start;
+  padding-left: 80px;
+}
+#form-body {
+  width: 600px;
+  height: max-content;
+  margin: 0;
+  background: rgba(30,30,30,100%);
+  border: rgb(15,15,15) solid 1px;
+}
 }

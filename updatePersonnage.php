@@ -7,13 +7,15 @@ if (!empty($_POST['perso-update-btn'])) {
 		$addPerso->exec('SET NAMES utf8');
 		
 		// je premare ma requête
-		$stmt = $addPerso->prepare("UPDATE personnages SET perso_bio = :perso_bio WHERE perso_id = :perso_id");
+		$stmt = $addPerso->prepare("UPDATE personnages SET perso_nom = :perso_nom, perso_prenom = :perso_prenom, perso_bio = :perso_bio  WHERE perso_id = :perso_id");
 
 
 					// je lui donne les paramètres dont elle a besoin sans en oublier
-                    $stmt->bindValue(":perso_bio", $_POST['perso_bio']);
-                    $stmt->bindValue(":perso_id", $_GET['perso_id']);
-
+					$stmt->bindValue(":perso_id", $_GET['perso_id']);
+					$stmt->bindValue(":perso_prenom", $_POST['perso_prenom']);
+					$stmt->bindValue(":perso_nom", $_POST['perso_nom']);
+					$stmt->bindValue(":perso_bio", $_POST['perso_bio']);
+                    
 					// Je l'execute et en fonction de si l'email existe deja ou pas, j'insere ma requete dans la bdd
 					$stmt->execute();
 		

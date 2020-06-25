@@ -35,8 +35,11 @@ CREATE TABLE `armes` (
   `arme_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< Updated upstream
 -- --------------------------------------------------------
 
+=======
+>>>>>>> Stashed changes
 --
 -- Structure de la table `articles`
 --
@@ -114,17 +117,6 @@ CREATE TABLE `citation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `citation`
---
-
-INSERT INTO `citation` (`citation_id`, `citation_perso`, `citation_description`) VALUES
-(1, 'Vador', '\"Je suis ton père\"'),
-(2, '', '\"Que la force soit avec toi\"'),
-(3, 'Yoda', '\"La peur mène à la colère, la colère mène à la haine, la haine mène à la souffrance.\"');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `organisations`
 --
 
@@ -152,8 +144,11 @@ CREATE TABLE `personnages` (
   `perso_categorie` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< Updated upstream
 -- --------------------------------------------------------
 
+=======
+>>>>>>> Stashed changes
 --
 -- Structure de la table `planetes`
 --
@@ -165,8 +160,11 @@ CREATE TABLE `planetes` (
   `planete_img` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< Updated upstream
 -- --------------------------------------------------------
 
+=======
+>>>>>>> Stashed changes
 --
 -- Structure de la table `races`
 --
@@ -175,17 +173,6 @@ CREATE TABLE `races` (
   `race_id` int(11) NOT NULL,
   `race_nom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `races`
---
-
-INSERT INTO `races` (`race_id`, `race_nom`) VALUES
-(1, 'Humain'),
-(2, 'Togruta'),
-(3, 'Zabrak');
-
--- --------------------------------------------------------
 
 --
 -- Structure de la table `roles`
