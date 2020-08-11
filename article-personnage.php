@@ -22,15 +22,15 @@ try{
     // connexion à la bdd
     $sql = new PDO("mysql:host=localhost;dbname=les_archives", "root");
     $sql->exec('SET NAMES utf8');
-    // preparation de la requête
-    $pages_personnages = $sql->prepare("SELECT * FROM `personnages` WHERE perso_id = :perso_id");
-    // je lui donne les paramètres dont elle a besoin sans en oublier
+    // Je prépare ma requête
+    $pages_personnages = $pdo->prepare("SELECT * FROM `personnages` WHERE perso_id = :perso_id");
+    // Je lui bind les paramètres dont elle a besoin
     $pages_personnages->bindValue(":perso_id", $_GET["perso_id"]);
-    // j'éxécute
+    // Je l'éxécute
     $pages_personnages->execute();
     
-    // si la requete n'aboutit pas (car le mail n'a pas été rentré ou existe deja dans la bdd
-    // il doit être unique, alors la requete ne s'effectue pas, sinon elle s'effectue
+    // Si la requête n'aboutit pas, je renvoie une erreur dans la barre d'adresse
+    // Si elle aboutit tout s'affiche correctement
     if($pages_personnages->rowCount()==1){
     
     } else {
@@ -45,7 +45,7 @@ try{
 foreach($pages_personnages as $page_personnage){
 
 
-    // j'afficher chaque ligne dans une card
+    // J'affiche chaques personnages dans un bloc
     echo '
         <div id="article-text">
         <h1 id="article-title">

@@ -248,7 +248,7 @@ $("#fermerInscription").click(function(){
 });
 
 //------------------------------------
-
+// fonction ouverute/fermeture modal connexion
 $("#connexion-btn").click(function(){
         $('#modalConnexion').css({
                 "transition": "0.5s",

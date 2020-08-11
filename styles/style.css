@@ -504,7 +504,7 @@ input:required:focus {
 /* media queries start */
 
 /* media queries iphone X */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   article {
     display: unset;
   }
@@ -582,5 +582,15 @@ body {
   margin: 0;
   background: rgba(30,30,30,100%);
   border: rgb(15,15,15) solid 1px;
+}
+#citation-div {
+  background: rgba(0, 0, 0,60%);
+  width: 300px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  right: 401.75px;
+  left: 60px;
+  top: 170px;
 }
 }
